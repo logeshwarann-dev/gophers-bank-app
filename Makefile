@@ -12,5 +12,7 @@ migrateup:
 migratedown:
 	migrate -path db/migrations -database "postgresql://root:secret@localhost:5432/gopher_bank?sslmode=disable" -verbose down
 
+sqlc:
+	sqlc generate
 
-.PHONY: postgres createdb dropdb migrateup migratedown
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc
